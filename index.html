@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Универ</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="blok-center">
+        <image class="obj" id="student" src="img/student.png"></image>
+
+        <div class="footer">
+            <div id="slider" class="elemnt">Слайдер
+
+            </div>
+
+            <a id="go_chat" type="button" class="elemnt chat"></a>
+            <a id="go_forward" type="button" class="elemnt"><img src="img/vuniver.png" alt="vuniver"></a>
+            <a id="go_mail" type="button" class="elemnt mail"><img src="img/mail_icon.png" alt="mail"></a>
+            <a id="go_rating" type="button" class="elemnt mail"><img src="img/raiting_icon.png" alt="raiting"></a>
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <script>
+        let isAnimated = false;
+        let current_step = 0;
+        let std = document.getElementById('student');
+
+        std.onanimationend = () => {
+            isAnimated = false;
+        };
+
+        document.getElementById("go_forward").onclick = function () {
+
+            if (!isAnimated) {
+                current_step = current_step > 10 ? 1 : current_step + 1;
+                std.style.animation = 'move' + current_step + ' 1s forwards';
+                isAnimated = true;
+            }
+
+
+        };
+
+
+
+    </script>
+
+</body>
+
+</html>
