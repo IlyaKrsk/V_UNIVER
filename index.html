@@ -1,63 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Универ</title>
-    <style>
+  </head>
 
-    </style>
-</head>
-
-<body>
+  <body>
     <div class="blok-center">
-        <image class="obj" id="student" src="img/student.png"></image>
+      <image class="obj" id="student" src="img/student.png"></image>
 
-        <div class="footer">
-            <div id="slider" class="elemnt">Слайдер
+      <div class="footer">
+        <div id="slider" class="elemnt">
+          <div class="cell4">
+            <div id="prevbtn"></div>
+          </div>
 
+          <div class="slider_line">
+            <div class="slider_line_container">
+              <div class="cell">
+                <img src="img/friend.png" /><a type="button" class="plus"></a>
+              </div>
+              <div class="cell"><img src="img/friend.png" /></div>
+              <div class="cell"><img src="img/friend.png" /></div>
+              <div class="cell"><img src="img/friend.png" /></div>
+              <div class="cell"><img src="img/friend.png" /></div>
+              <div class="cell"><img src="img/friend.png" /></div>
+
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
             </div>
+          </div>
 
-            <a id="go_chat" type="button" class="elemnt chat"></a>
-            <a id="go_forward" type="button" class="elemnt"><img src="img/vuniver.png" alt="vuniver"></a>
-            <a id="go_mail" type="button" class="elemnt mail"><img src="img/mail_icon.png" alt="mail"></a>
-            <a id="go_rating" type="button" class="elemnt mail"><img src="img/raiting_icon.png" alt="raiting"></a>
+          <div class="cell4">
+            <div id="nextbtn"></div>
+          </div>
         </div>
 
-
-
-
-
-
+        <a id="go_chat" type="button" class="elemnt chat"></a>
+        <a id="go_forward" type="button" class="elemnt"
+          ><img src="img/vuniver.png" alt="vuniver"
+        /></a>
+        <a id="go_mail" type="button" class="elemnt mail"
+          ><img src="img/mail_icon.png" alt="mail"
+        /></a>
+        <a id="go_rating" type="button" class="elemnt mail"
+          ><img src="img/raiting_icon.png" alt="raiting"
+        /></a>
+      </div>
     </div>
-
-    <script>
-        let isAnimated = false;
-        let current_step = 0;
-        let std = document.getElementById('student');
-
-        std.onanimationend = () => {
-            isAnimated = false;
-        };
-
-        document.getElementById("go_forward").onclick = function () {
-
-            if (!isAnimated) {
-                current_step = current_step > 10 ? 1 : current_step + 1;
-                std.style.animation = 'move' + current_step + ' 1s forwards';
-                isAnimated = true;
-            }
-
-
-        };
-
-
-
-    </script>
-
-</body>
-
+    <!-- всплывающее окно рейтинг-->
+    <div class="modal">
+      <div class="brwn_box">
+        <h2 class="raiting_title">Рейтинг игроков</h2>
+        <a id="close_button" type="button"><span class="close"></span></a>
+        <div class="raiting_table">
+          <div class="raiting_item_title">
+            <div class="number">Место</div>
+            <div class="cellimg"></div>
+            <div class="name">Имя Фамилия</div>
+            <div class="points">Очки</div>
+          </div>
+          <div class="raiting_container">
+            <div class="raiting_item">
+              <div class="number">1</div>
+              <div class="cellimg"><img src="img/malefemale.png" /></div>
+              <div class="name">Иван Иванов</div>
+              <div class="points">1000234234234</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shadow"></div>
+    </div>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
